@@ -1,11 +1,16 @@
 package com.devdroid.floatingbuttom.model.fab
 
+import com.devdroid.floatingbuttom.model.fab.actions.Click
 import com.devdroid.floatingbuttom.model.fab.properties.Container
 import com.devdroid.floatingbuttom.model.fab.properties.Icon
 
-class FloatingActionButton(
-    val container: Container,
-    val icon: Icon
-) {
+abstract class FloatingActionButton : Click {
+    abstract val container : Container
+    abstract val icon : Icon?
+
+    override fun setOnClickListener() {
+        println("Botom presionado")
+    }
+
 
 }
